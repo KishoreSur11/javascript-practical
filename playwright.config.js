@@ -1,11 +1,13 @@
-const { defineConfig } = require('@playwright/test');
-const { defineBddConfig } = require('playwright-bdd');
-
-const testDir = defineBddConfig({
-  features: 'features/**/*.feature',
-  steps: ['steps/**/*.js'],
-});
-
+const { defineConfig, devices } = require('@playwright/test');
+ 
 module.exports = defineConfig({
-  testDir,
+  testDir: './tests',
+  testMatch: '**/*.spec.js',
+ 
+  use: {
+    ...devices['Desktop Chrome'],
+    headless: false,
+  },
+ 
+  reporter: 'html',
 });

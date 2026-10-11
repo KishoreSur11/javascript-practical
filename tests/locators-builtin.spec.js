@@ -1,7 +1,7 @@
 import { request } from "node:http"
 
  //const {test expect } =  request ('@playwreight/test')
-const {test expect }= request ('@playwreight/test');
+const { test, expect } = require('@playwright/test');
 
  test ('Builtinlocator', async ({page})=>{
 
